@@ -1,0 +1,56 @@
+/* style mst body */
+.wrapper{
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+}
+/* default style button */
+button{
+  height: 30px;
+  border: none;
+}
+/* style menu horizontal */
+.header-menu-wrapper div{
+  display: inline-flex;
+}
+.header-menu-wrapper{
+  height: 50px;
+  background-color: #0050ff;
+}
+.header-menu-wrapper ul,
+.header-menu-wrapper ul li{
+  display: inline-block;
+  list-style-type: none;
+}
+.header-menu-wrapper ul li{
+  padding-right: 20px;
+}
+.header-menu-wrapper ul li a{
+  text-decoration: none;
+  color: white;
+}
+.header-menu-wrapper ul li a:hover{
+  border-bottom: solid white 1px;
+}
+.menu-option{
+  text-align: center;
+  width: 70%;
+}
+.user button{
+ margin: auto 10px;
+}
+/* end of style menu */
+.content-wrapper{
+  position: relative;
+  height: 70%;
+}
+.login-user, .register-user{
+  border : solid #0050ff 1px;
+  width: 500px;
+  margin: auto 0;
+}
+/* style mst footer */
+.footer{
+background-color: gray;
+height: 400px;
+}

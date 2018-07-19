@@ -1,0 +1,203 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  /* font-size default dari browser = 16px =100% */
+  font-size: 62.5%/*10px = 0.62 dari 16px*/;
+  /* digunakan sebagai global variabel/root font-size font agar
+  agar kita bisa menggunakan responsive font-size
+  rem atau em
+  dimana rem mengacu ppada root font-size
+  1rem = rootfont-size
+  yg disini berarti 1rem = 10px;*/
+}
+
+body {
+  font-family: "Ti mesNewRoman", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777777;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 95vh;
+  /*
+  vh adalah kepanjangan dari viewport height
+  dimana ukuran content kita akan responsif mengikuti layar */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.9), rgba(40, 180, 131, 0.9)), url(../image/thubnails/LTjkixq.jpg);
+  background-size: cover;
+  background-position: top;
+  /*
+  properti yang digunakan untuk mengedit bentuk objek
+  koordinat(x y, x y, x y, x y)
+  (top left, top right, bottom-right, bottom-left)
+  */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+.header__text-box {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  /*
+  transalate disini berfungsi untuk tepat menyimpan ditengah*/
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #ffffff;
+  backface-visibility: hidden;
+  /* menghilangkan bug zoom keatas */
+  margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  text-transform: uppercase;
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  /*
+animation-iteration-count: 3;
+*menampilkan 3kali
+animation-delay: 3s;
+*menampilkan setelah 3s
+*/
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1.2rem;
+  animation-name: moveInRight;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 4.5rem;
+  display: inline-block;
+  border-radius: 8rem;
+  transition-property: all;
+  transition-duration: .3s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  /* box-shadow: horizontal vertikal blur */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, .2);
+}
+
+.btn--white {
+  background-color: #ffffff;
+  color: #777777;
+}
+
+.btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  border-radius: 8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+.btn--white::after {
+  background-color: #ffffff;
+}
+.btn:hover::after{
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn--animated{
+  animation: moveToTop 2s ease-out;
+}
+
+/* ---------------------------------------------------------- */
+
+/* Area animasi
+@keyframes digunalan untuk membuat animasi
+pda css*/
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-5rem);
+  }
+  /* minus menandakan pergerakan kekiri */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  80% {
+    transform: translateY(-2rem);
+  }
+  /* minus menandakan pergerakan keAtas */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ----------------------------------------------------------- */
+
+/* area for mobile optimization */
