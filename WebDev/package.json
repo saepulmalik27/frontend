@@ -1,0 +1,14 @@
+{
+  "name": "webdev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass" : "node-sass/main.scss css/nature.min.css"
+  },
+  "author": "malik",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "node-sass": "^4.9.2"
+  }
+}

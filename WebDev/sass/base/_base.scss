@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /*10px = 0.62 dari 16px*/
+  /* font-size default dari browser = 16px =100% */
+  font-size: 62.5%;
+  /* digunakan sebagai global variabel/root font-size font agar
+  agar kita bisa menggunakan responsive font-size
+  rem atau em
+  dimana rem mengacu ppada root font-size
+  1rem = rootfont-size
+  yg disini berarti 1rem = 10px;*/
+}
+
+body {
+  box-sizing: border-box;
+}
